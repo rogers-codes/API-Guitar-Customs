@@ -1,0 +1,6 @@
+2026-10-22 22:31:53.743353-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * [*]DROP GUITARRA"; SQL statement:
+SELECT * DROP GUITARRA [42000-240]
+2026-10-22 22:36:15.497639-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "COR CHARACTER VARYING(10)": "'Solar Orange' (12)"; SQL statement:
+insert into guitarra (cor,marca,modelo,valor,id) values (?,?,?,?,?) [22001-240]

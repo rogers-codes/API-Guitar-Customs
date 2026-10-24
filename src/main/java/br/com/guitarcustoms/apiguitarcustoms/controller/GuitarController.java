@@ -1,7 +1,7 @@
 package br.com.guitarcustoms.apiguitarcustoms.controller;
 
 import br.com.guitarcustoms.apiguitarcustoms.entity.GuitarCustoms;
-import br.com.guitarcustoms.apiguitarcustoms.service.ComprarGuitarraUseCase;
+import br.com.guitarcustoms.apiguitarcustoms.service.InserirGuitarraUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,10 +11,16 @@ public class GuitarController {
 
 
     @Autowired
-    ComprarGuitarraUseCase comprarGuitarraUseCase; //cria um objeto da classe useCase para usar os seus métodos
+    InserirGuitarraUseCase inserirGuitarraUseCase; //cria um objeto da classe useCase para usar os seus métodos
 
     @PostMapping ("/comprar")
-    public void comprarGuitarra (@RequestBody GuitarCustoms guitarra){ //Recebe uma guitarra como parametro
-        comprarGuitarraUseCase.comprar(guitarra); //compra uma guitarra
+    public GuitarCustoms inserirGuitarra (@RequestBody GuitarCustoms guitarra){ //Recebe uma guitarra como parametro
+       return inserirGuitarraUseCase.inserir(guitarra); //insere uma guitarra
     }
-}
+
+
+
+//    public GuitarCustoms verGuitarra (@ResponseBody GuitarCustoms guitarCustoms) {
+//        return guitarCustoms.toString();
+    }
+
